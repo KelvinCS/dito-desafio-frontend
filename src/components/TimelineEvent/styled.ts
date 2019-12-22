@@ -9,7 +9,9 @@ export const Container = styled.div`
 `;
 
 export const Content = styled.div`
-  min-width: 200px;
+  min-width: 300px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 6px;
 `;
 
 export const Label = styled.h2`
@@ -38,9 +40,15 @@ export const Header = styled.div`
   border-bottom: none;
 `;
 
+export const HeaderItem = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+`;
+
 export const ProductList = styled.div`
   border-bottom: none;
   background-color: ${({ theme }) => theme.colors.grayLight};
   padding: 0 16px;
-  border-radius: 0 0 12px 12px;
+  border-radius: 0 0 6px 6px;
 `;
