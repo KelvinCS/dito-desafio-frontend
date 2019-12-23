@@ -1,5 +1,5 @@
 import React from "react";
-import EventTimeline from "./pages/EventTimeline";
+import PurchaseTimeline from "./pages/PurchaseTimeline";
 import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/global";
 import styles from "./styles";
@@ -8,7 +8,7 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={styles}>
       <GlobalStyles />
-      <EventTimeline></EventTimeline>
+      <PurchaseTimeline />
     </ThemeProvider>
   );
 };

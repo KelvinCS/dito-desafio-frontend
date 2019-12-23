@@ -10,7 +10,7 @@ import PurchaseInfo from "../../components/PurchaseInfo";
 import { useActions, useValues } from "kea";
 import eventsLogic from "./events.logic";
 
-const EventTimeline = () => {
+const PurchaseTimeline = () => {
   const { fetchEvents } = useActions(eventsLogic);
   const { events } = useValues(eventsLogic);
 
@@ -34,4 +34,4 @@ const EventTimeline = () => {
   );
 };
 
-export default EventTimeline;
+export default PurchaseTimeline;
