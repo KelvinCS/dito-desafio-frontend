@@ -12,6 +12,12 @@ const normalizeEvent = event => {
   );
 };
 
+const addProduct = (products = [], { product_name, product_price }) => {
+  if (!product_name) return products;
+
+  return [...products, { name: product_name, price: product_price }];
+};
+
 const events = kea({
   actions: () => ({
     fetchEvents: () => ({}),
@@ -33,22 +39,18 @@ const events = kea({
               name
             } = normalizeEvent(event);
 
-            const eventInfo = currentState[transaction_id] || { products: [] };
-
-            const products = product_name
-              ? [
-                  ...eventInfo.products,
-                  { name: product_name, price: product_price }
-                ]
-              : eventInfo.products;
+            const { location, products } = currentState[transaction_id] || {};
 
             return {
               ...currentState,
               [transaction_id]: {
-                location: store_name || eventInfo.location,
+                location: store_name || location,
+                products: addProduct(products, {
+                  product_name,
+                  product_price
+                }),
                 timestamp,
-                name,
-                products
+                name
               }
             };
           }, state)
