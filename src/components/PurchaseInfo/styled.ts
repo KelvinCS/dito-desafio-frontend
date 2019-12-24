@@ -5,8 +5,9 @@ import {
 } from "../../styles/typography";
 
 export const Container = styled.div`
-  display: flex;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
 `;
 
 export const Content = styled.div`

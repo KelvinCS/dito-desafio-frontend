@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
   Container,
-  Content,
   Header,
   ProductList,
   Text,
@@ -13,7 +12,7 @@ import { formatCurrency } from "../../lib";
 import moment, { MomentInput } from "moment";
 import { Place, Clock, Calendar, Money } from "./icons";
 
-interface Props {
+export interface Props {
   timestamp: Date | String;
   location: string;
 
@@ -36,8 +35,8 @@ const PurchaseInfo = ({ location, timestamp, products }: Props) => {
   }, [products]);
 
   return (
-    <Container>
-      <Content>
+    <div>
+      <Container>
         <Header>
           <HeaderItem>
             <Calendar />
@@ -68,8 +67,8 @@ const PurchaseInfo = ({ location, timestamp, products }: Props) => {
             </Row>
           ))}
         </ProductList>
-      </Content>
-    </Container>
+      </Container>
+    </div>
   );
 };
 

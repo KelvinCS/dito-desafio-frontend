@@ -1,14 +1,8 @@
 import React, { useEffect } from "react";
-import {
-  Container,
-  ArrowLeft,
-  TimelineEvent,
-  Timeline,
-  CheckIcon
-} from "./styled";
-import PurchaseInfo from "../../components/PurchaseInfo";
+import { Container } from "./styled";
 import { useActions, useValues } from "kea";
 import eventsLogic from "./events.logic";
+import TimelineEvent from "../../components/TimelineEvent";
 
 const PurchaseTimeline = () => {
   const { fetchEvents } = useActions(eventsLogic);
@@ -20,16 +14,9 @@ const PurchaseTimeline = () => {
 
   return (
     <Container>
-      <Timeline />
-      <div>
-        {events.map((props, index) => (
-          <TimelineEvent key={index}>
-            <CheckIcon />
-            <ArrowLeft />
-            <PurchaseInfo {...props} />
-          </TimelineEvent>
-        ))}
-      </div>
+      {events.map((props, index) => (
+        <TimelineEvent key={index} {...props} />
+      ))}
     </Container>
   );
 };
